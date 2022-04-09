@@ -5,16 +5,12 @@ import { useEffect, useState } from 'react';
 
 export default function App() {
 
-  const [hod, setHod] = useState(0)
-  const [min, setMin] = useState(0)
-  const [sec, setSec] = useState(0)
-  const [now, setNow] = useState(new Date())
-
-  const [test,settest] = useState(0);
+  const [hod, setHod] = useState(new Date().getHours())
+  const [min, setMin] = useState(new Date().getMinutes())
+  const [sec, setSec] = useState(new Date().getSeconds())
 
   //https://devtrium.com/posts/set-interval-react
   useEffect(() => {
-    var now = new Date();
     const interval = setInterval(() => {
       updateTime();
     }, 1000);
@@ -28,17 +24,12 @@ export default function App() {
   setHod(newdate.getHours());
   setMin(newdate.getMinutes()); 
   setSec(newdate.getSeconds());
-  
- setNow(new Date())
-  settest(test => test+1);
-
 }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text>hod={hod} min={min} sec={sec}</Text>
       <Hodiny hod={hod} min={min} sec={sec} />
-  <Text>{test}</Text>
 
       <StatusBar style="auto" />
     </SafeAreaView>
