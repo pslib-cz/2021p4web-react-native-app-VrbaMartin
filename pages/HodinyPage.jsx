@@ -1,3 +1,50 @@
+import { useEffect, useState } from "react";
+import { SafeAreaView, StatusBar, StyleSheet, Text } from "react-native-web";
+import Hodiny from "../components/Hodiny";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center', 
+  },
+
+    clock: {
+      top: 0,
+      width: 400,
+      height: 400,
+      position: 'static',
+      resizeMode: 'contain',
+      zIndex: 0
+    },
+    hour: {
+      top: 0,
+      width: 400,
+      height: 400,
+      position: 'absolute',
+      resizeMode: 'contain',
+      zIndex: 1
+    },
+    minute: {
+      top: 0,
+      width: 400,
+      height: 400,
+      position: 'absolute',
+      resizeMode: 'contain',
+      zIndex: 2
+    },
+    second: {
+      top: 0,
+      width: 400,
+      height: 400,
+      position: 'absolute',
+      resizeMode: 'contain',
+      zIndex: 3
+    }
+  });
+
+
 export default function HodinyPage() {
 
     const [hod, setHod] = useState(new Date().getHours())
