@@ -1,38 +1,42 @@
-import { Text } from "react-native";
-import { useState } from "react";
-import { Image, StyleSheet, View } from "react-native-web";
-import { useEffect } from "react/cjs/react.production.min";
+import {  StyleSheet , Text, Image, View } from "react-native";
+import { useState, useEffect } from "react";
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center', 
+  },
   clock: {
+    
     top: 0,
-    width: 400,
-    height: 400,
-    position: 'static',
+    width: 300,
+    height: 300,
+    position: 'absolute',
     resizeMode: 'contain',
-    zIndex: 0
+    zIndex: 1
   },
   hour: {
     top: 0,
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 300,
     position: 'absolute',
     resizeMode: 'contain',
     zIndex: 1
   },
   minute: {
     top: 0,
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 300,
     position: 'absolute',
     resizeMode: 'contain',
     zIndex: 2
   },
   second: {
     top: 0,
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 300,
     position: 'absolute',
     resizeMode: 'contain',
     zIndex: 3
@@ -51,7 +55,7 @@ export default function Hodiny(props) {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <Image
         style={styles.clock}
         source={require('../images/clock.png')}
